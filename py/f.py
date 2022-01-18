@@ -15,11 +15,12 @@ for t in db.keys():
 lit = []
 n = 1
 for a in re.findall(r'\[a\d+\]', text):
+    print(a, lit_dict[a])
     text = text.replace(a, f'[{n}]')
     link = re.findall(r'\[(.*?)\]', lit_dict[a])[0]
     if link not in lit:
         lit += [link]
-    n += 1
+        n += 1
     
 n = 1
 for l in lit:
